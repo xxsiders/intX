@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="intX.Views.List">
+<StackLayout>
+        <Grid>
+            <Button Text="Back" BackgroundColor="Teal" Clicked="Handle_Clicked_1" TextColor="White" Margin="-10,25,0,0" WidthRequest="100" HorizontalOptions="Start"/>
+            <Button Text="Save" BackgroundColor="Teal" Clicked="SaveToExcel" TextColor="White" Margin="0,25,-10,0" WidthRequest="100" HorizontalOptions="End"/>
+        </Grid>
+    <ListView  x:Name="MylistView" Header="List" HasUnevenRows="true">  
+    <ListView.HeaderTemplate>  
+        <DataTemplate>  
+            <Grid Padding="12" BackgroundColor="Gray">  
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Rating" FontSize="25" TextColor="White" HorizontalOptions="Center"/>
+                <Label Grid.Column="1" Text="Email" FontSize="25" TextColor="White" HorizontalOptions="Center">
+                   <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Emailbtn"/>        
+                   </Label.GestureRecognizers>        
+                </Label>
+                <Label Grid.Column="2"  Text="Phone" FontSize="25" TextColor="White" HorizontalOptions="Center">
+                   <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Phonebtn"/>        
+                   </Label.GestureRecognizers>        
+                </Label>
+                <Label Grid.Column="3" Text="Date" FontSize="25" TextColor="White" HorizontalOptions="Center"/>
+                </Grid>
+        </DataTemplate>  
+    </ListView.HeaderTemplate>  
+    <ListView.ItemTemplate>  
+        <DataTemplate>  
+            <ViewCell Tapped="MainListView_ItemSelected">  
+                <Grid Padding="12">
+                    <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="{Binding Rate}" FontAttributes="Bold" TextColor="Maroon" Grid.Column="0" FontSize="Medium" HorizontalOptions="Center"></Label> 
+                    <Label Text="{Binding email}" Grid.Column="1" FontSize="Medium" HorizontalOptions="Center"></Label> 
+                    <Label Text="{Binding phone}" Grid.Column="2" FontSize="Medium" HorizontalOptions="Center"></Label> 
+                    <Label Text="{Binding date}" Grid.Column="3" FontSize="Medium" HorizontalOptions="Center"></Label> 
+                    </Grid>  
+            </ViewCell>  
+        </DataTemplate>  
+    </ListView.ItemTemplate>  
+</ListView>          
+</StackLayout>
+</ContentPage>

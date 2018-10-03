@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" Title="Admin" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="intX.Views.Admin">
+<ScrollView BackgroundColor="Gray">
+        <Grid  RowSpacing="25" Margin="0,25,0,0"> 
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="0.25*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.4*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Label FontSize="Large" Text="English" HorizontalOptions="Start">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="English"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label FontSize="Large" Text="عربى" HorizontalOptions="End">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Arabic"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+            
+            <Entry Grid.Row="2" HorizontalTextAlignment="Center" x:Name="q1" Grid.Column="1" HeightRequest="40"/>
+            <Entry Grid.Row="3" HorizontalTextAlignment="Center"  x:Name="q2" Grid.Column="1" HeightRequest="40"/>
+            <Entry Grid.Row="4" HorizontalTextAlignment="Center"  x:Name="q3" Grid.Column="1" HeightRequest="40"/>
+            <Entry Grid.Row="5" HorizontalTextAlignment="Center"  x:Name="q4" Grid.Column="1" HeightRequest="40"/>
+            <Grid Grid.Row="7" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label HorizontalOptions="Center" TextColor="White" Grid.Column="0" x:Name="tleft"/>
+                <Label HorizontalOptions="Center" TextColor="White" Grid.Column="1" x:Name="tcenter"/>
+                <Label HorizontalOptions="Center" TextColor="White" Grid.Column="2" x:Name="tright"/>
+            </Grid>
+            <Grid Grid.Row="8" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Entry Grid.Column="0" x:Name="left"/>
+                <Entry Grid.Column="1" x:Name="center" HorizontalTextAlignment="Center"/>
+                <Entry Grid.Column="2" x:Name="right"/>
+            </Grid>
+            <Grid  Grid.Row="9" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Clicked="backbtn" x:Name="back" BackgroundColor="Teal"  TextColor="White" />
+                <Button Grid.Column="1" Clicked="listsbtnbtn" x:Name="lists" BackgroundColor="Teal"  TextColor="White" />
+                <Button Grid.Column="2" Clicked="reportsbtn" x:Name="report" BackgroundColor="Teal" TextColor="White"/>
+            </Grid>
+            <Button x:Name="submit" Clicked="Submit_Clicked" BackgroundColor="Teal" Grid.Row="10" Grid.Column="1" TextColor="White" FontSize="Large"/>
+
+        </Grid>
+</ScrollView>
+</ContentPage>

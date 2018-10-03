@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"     xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms" 
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="intX.Views.Report">
+    <ScrollView x:Name="scrolls">
+        <Grid HeightRequest="1500">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.25*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.1*"/>
+            </Grid.ColumnDefinitions>
+            <Button Text="Back" Clicked="Handle_Clicked" BackgroundColor="Gray" VerticalOptions="End" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" TextColor="White" Margin="-20,0,0,0"/>
+            <Label x:Name="datetxt" VerticalOptions="End" FontAttributes="Bold" Grid.Row="0" Grid.Column="2" FontSize="Small" HorizontalTextAlignment="Start" TextColor="Gray" Margin="-20,0,0,0"/>
+            <Label Text="Day" Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" FontSize="Medium" TextColor="Teal" FontAttributes="Bold"/>
+            <microcharts:ChartView Grid.Row="2" Grid.Column="1" x:Name="dchart" /> 
+            <Label Text="Week" Margin="0,25,0,0" Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" FontSize="Medium" TextColor="Teal" FontAttributes="Bold"/>
+            <microcharts:ChartView x:Name="wchart" Grid.Row="4" Grid.Column="1"/>
+            <Label Text="Month" Margin="0,25,0,0" Grid.Row="5" Grid.Column="1" HorizontalOptions="Start" FontSize="Medium" TextColor="Teal" FontAttributes="Bold"/>
+            <microcharts:ChartView  x:Name="mchart" Grid.Row="6" Grid.Column="1"/>
+            <Label Text="Year" Margin="0,25,0,0" Grid.Row="7" Grid.Column="1" HorizontalOptions="Start" FontSize="Medium" TextColor="Teal" FontAttributes="Bold"/>
+            <microcharts:ChartView  x:Name="ychart" Grid.Row="8" Grid.Column="1"/>
+        </Grid>
+    </ScrollView>   
+</ContentPage>
